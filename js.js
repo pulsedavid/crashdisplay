@@ -14,7 +14,7 @@ $(document).ready(function() {
     dataType: 'json',
     success: function(data) {
       htmlstring = '<table id=weathertable>';
-      for (var i = 0; i < data.forecast.txt_forecast.forecastday.length; i++) {
+      for (var i = 0; i < min(data.forecast.txt_forecast.forecastday.length,4); i++) {
         htmlstring += '<tr><td>'+data.forecast.txt_forecast.forecastday[i].title+'</td>';
         htmlstring += '<td>'+data.forecast.txt_forecast.forecastday[i].fcttext+'</td>';
         htmlstring += '<td>'+data.forecast.txt_forecast.forecastday[i].pop+'% precip</td></tr>';

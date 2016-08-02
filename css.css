@@ -39,4 +39,5 @@ body {
 #weathertable{
   color:white;
   width:40%;
+  position:fixed;
 }
