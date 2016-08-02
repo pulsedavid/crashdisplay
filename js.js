@@ -20,6 +20,7 @@ $(document).ready(function() {
         htmlstring += '<td>'+data.forecast.txt_forecast.forecastday[i].pop+'% precip</td></tr>';
       }
       htmlstring += '</table>';
+      $('#weather').html(htmlstring);
     }
   });
 
