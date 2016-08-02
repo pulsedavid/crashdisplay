@@ -2,13 +2,8 @@ $(document).ready(function() {
 
   var currentWeather;
 
-  $.ajax({
-    url: 'http://api.wunderground.com/api/e78d2ccf0a39822b/conditions/q/CA/Studio_City.json',
-    dataType: 'json',
-    success: function(data) {
-      currentWeather=data.current_observation.temp_f + String.fromCharCode(parseInt('00B0', 16)) + 'F';
-    }
-  });
+
+  htmlstring = "";
   $.ajax({
     url: 'http://api.wunderground.com/api/cec98b78b65111a9/forecast/q/zmw:12993.1.99999.json',
     dataType: 'json',
@@ -19,10 +14,18 @@ $(document).ready(function() {
         htmlstring += '<td>'+data.forecast.txt_forecast.forecastday[i].fcttext+'</td>';
         htmlstring += '<td>'+data.forecast.txt_forecast.forecastday[i].pop+'% precip</td></tr>';
       }
-      htmlstring += '</table>';
-      $('#weather').html(htmlstring);
+
     }
   });
+  $.ajax({
+    url: 'http://api.wunderground.com/api/cec98b78b65111a9/conditions/q/zmw:12993.1.99999.json',
+    dataType: 'json',
+    success: function(data) {
+      htmlstring += '<tr><th colspan=3>Right Now: '+data.current_observation.weather+'. Feels like '+data.current_observation.feelslike_string+', Wind: '+data.current_observation.wind_string+' '+data.current_observation.wind_dir+' at '+data.current_observation.wind_mph+' MPH</th></tr>';
+    }
+  });
+  htmlstring += '</table>';
+  $('#weather').html(htmlstring);
 
   var myDate = new Date();
 

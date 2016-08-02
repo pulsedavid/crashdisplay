@@ -28,6 +28,7 @@ body {
   position: fixed;
   right: 20px;
   top: 20px;
+  font-size:30;
 }
 #weather{
   position: fixed;
@@ -40,4 +41,6 @@ body {
   color:white;
   width:40%;
   position:fixed;
+  right:20;
+  top:70;
 }
