@@ -14,10 +14,10 @@ $(document).ready(function() {
     dataType: 'json',
     success: function(data) {
       htmlstring = '<table>';
-      for (var i = 0; i < forecast.txt_forecast.forecastday.length; i++) {
-        htmlstring += '<tr><td>'+forecast.txt_forecast.forecastday[i].title+'</td>';
-        htmlstring += '<td>'+forecast.txt_forecast.forecastday[i].fcttext+'</td>';
-        htmlstring += '<td>'+forecast.txt_forecast.forecastday[i].pop+'% precip</td>';
+      for (var i = 0; i < data.forecast.txt_forecast.forecastday.length; i++) {
+        htmlstring += '<tr><td>'+data.forecast.txt_forecast.forecastday[i].title+'</td>';
+        htmlstring += '<td>'+data.forecast.txt_forecast.forecastday[i].fcttext+'</td>';
+        htmlstring += '<td>'+data.forecast.txt_forecast.forecastday[i].pop+'% precip</td></tr>';
       }
       htmlstring += '</table>';
     }
