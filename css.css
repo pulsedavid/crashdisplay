@@ -15,10 +15,13 @@ body {
   background-repeat:no-repeat;
   background-position:center center;
 
-  -webkit-transition: background-image 0.5s ease-in-out;
-  transition: background-image 0.5s ease-in-out;
+
 
   color:white;
+}
+#backgroundimg {
+  -webkit-transition: background-image 0.5s ease-in-out;
+  transition: background-image 0.5s ease-in-out;
 }
 
 #bottomleft {
