@@ -17,8 +17,22 @@ body {
 
   color:white;
 }
+
 #bottomleft {
   position: fixed;
   left: 20px;
   bottom: 20px;
+  font-size:4em;
+}
+
+#title{
+  position: fixed;
+  right: 20px;
+  top: 20px;
+}
+#weather{
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  font-size:2em;
 }

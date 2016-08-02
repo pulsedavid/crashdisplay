@@ -9,6 +9,19 @@ $(document).ready(function() {
       currentWeather=data.current_observation.temp_f + String.fromCharCode(parseInt('00B0', 16)) + 'F';
     }
   });
+  $.ajax({
+    url: 'http://api.wunderground.com/api/cec98b78b65111a9/forecast/q/zmw:12993.1.99999.json',
+    dataType: 'json',
+    success: function(data) {
+      htmlstring = '<table>';
+      for (var i = 0; i < forecast.txt_forecast.forecastday.length; i++) {
+        htmlstring += '<tr><td>'+forecast.txt_forecast.forecastday[i].title+'</td>';
+        htmlstring += '<td>'+forecast.txt_forecast.forecastday[i].fcttext+'</td>';
+        htmlstring += '<td>'+forecast.txt_forecast.forecastday[i].pop+'% precip</td>';
+      }
+      htmlstring += '</table>';
+    }
+  });
 
   var myDate = new Date();
 
