@@ -60,10 +60,5 @@ $(document).ready(function() {
   }
   updateClock(); // initial call
 
-  backgroundImageNumber = 1;
-  function changeBackground() {
-    document.getElementById('background').style.backgroundImage='url(http://jonathandamico.me/dudleydisplay/images/'+backgroundImageNumber+'.jpg)'
-    backgroundImageNumber = backgroundImageNumber==8?1:backgroundImageNumber+1;
-  }
-  setInterval(changeBackground,3000);
+  document.getElementById('background').style.backgroundImage='url(http://jonathandamico.me/dudleydisplay/images/'+(new String(parseInt(Math.random()*8)+1))+'.jpg)';
 });
