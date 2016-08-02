@@ -13,7 +13,7 @@ $(document).ready(function() {
     url: 'http://api.wunderground.com/api/cec98b78b65111a9/forecast/q/zmw:12993.1.99999.json',
     dataType: 'json',
     success: function(data) {
-      htmlstring = '<table>';
+      htmlstring = '<table id=weathertable>';
       for (var i = 0; i < data.forecast.txt_forecast.forecastday.length; i++) {
         htmlstring += '<tr><td>'+data.forecast.txt_forecast.forecastday[i].title+'</td>';
         htmlstring += '<td>'+data.forecast.txt_forecast.forecastday[i].fcttext+'</td>';

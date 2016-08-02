@@ -34,5 +34,9 @@ body {
   right: 20px;
   top: 20px;
   font-size:2em;
+}
+
+#weathertable{
   color:white;
+  width:40%;
 }
