@@ -59,4 +59,11 @@ $(document).ready(function() {
     setTimeout(updateClock, 1000);
   }
   updateClock(); // initial call
+
+  backgroundImageNumber = 1;
+  function changeBackground() {
+    document.getElementById('background').style.backgroundImage='url(http://jonathandamico.me/dudleydisplay/images/'+backgroundImageNumber+'.jpg)'
+    backgroundImageNumber = backgroundImageNumber==8?1:backgroundImageNumber+1;
+  }
+  setTimeout(changeBackground,1000);
 });
