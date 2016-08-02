@@ -65,5 +65,5 @@ $(document).ready(function() {
     document.getElementById('background').style.backgroundImage='url(http://jonathandamico.me/dudleydisplay/images/'+backgroundImageNumber+'.jpg)'
     backgroundImageNumber = backgroundImageNumber==8?1:backgroundImageNumber+1;
   }
-  setInterval(changeBackground,30000);
+  setInterval(changeBackground,300000);
 });
