@@ -12,3 +12,8 @@
   background-position:center center;
 
 }
+#bottomleft {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+}
