@@ -7,6 +7,7 @@ $(document).ready(function() {
   $.ajax({
     url: 'http://api.wunderground.com/api/cec98b78b65111a9/forecast/q/zmw:12993.1.99999.json',
     dataType: 'json',
+    async: false,
     success: function(data) {
       htmlstring = '<table id=weathertable>';
       for (var i = 0; i < Math.min(data.forecast.txt_forecast.forecastday.length,4); i++) {
@@ -20,6 +21,7 @@ $(document).ready(function() {
   $.ajax({
     url: 'http://api.wunderground.com/api/cec98b78b65111a9/conditions/q/zmw:12993.1.99999.json',
     dataType: 'json',
+    async: false,
     success: function(data) {
       htmlstring += '<tr><th colspan=3>Right Now: '+data.current_observation.weather+'. Feels like '+data.current_observation.feelslike_string+', Wind: '+data.current_observation.wind_string+' '+data.current_observation.wind_dir+' at '+data.current_observation.wind_mph+' MPH</th></tr>';
     }
