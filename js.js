@@ -38,7 +38,7 @@ $(document).ready(function() {
     method: 'GET',
     async:false,
   }).done(function(result) {
-    htmlstring = "<table>";
+    htmlstring = "<table style='color:white;'>";
     for (var i = 0; i < Math.min(result.response.docs.length,3); i++) {
       htmlstring+="<tr><td>"+result.response.docs[i].headline.main+": "+result.response.docs[i].snippet+"</td></tr>";
     }
