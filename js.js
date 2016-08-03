@@ -23,7 +23,7 @@ $(document).ready(function() {
     dataType: 'json',
     async: false,
     success: function(data) {
-      htmlstring += '<tr><th colspan=3>Right Now: '+data.current_observation.weather+'. Feels like '+data.current_observation.feelslike_string+', Wind: '+data.current_observation.wind_string+'</th></tr>';
+      htmlstring += '<tr><th colspan=3>Right Now: '+data.current_observation.weather+'. Temp: '+data.current_observation.temperature_string+', Feels like '+data.current_observation.feelslike_string+', Wind: '+data.current_observation.wind_string+'</th></tr>';
     }
   });
   htmlstring += '</table>';
