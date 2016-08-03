@@ -39,7 +39,7 @@ $(document).ready(function() {
     async:false,
   }).done(function(result) {
     htmlstring = "<table style='color:white;'>";
-    for (var i = 0; i < Math.min(result.response.docs.length,3); i++) {
+    for (var i = 0; i < Math.min(result.response.docs.length,5); i++) {
       htmlstring+="<tr><td>"+result.response.docs[i].headline.main+": "+result.response.docs[i].snippet+"</td></tr>";
     }
     htmlstring+= "</table>";
