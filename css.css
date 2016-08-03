@@ -45,3 +45,8 @@ body {
   right:20;
   top:70;
 }
+#bottomright {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}

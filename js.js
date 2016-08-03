@@ -23,12 +23,26 @@ $(document).ready(function() {
     dataType: 'json',
     async: false,
     success: function(data) {
-      htmlstring += '<tr><th colspan=3>Right Now: '+data.current_observation.weather+'. Feels like '+data.current_observation.feelslike_string+', Wind: '+data.current_observation.wind_string+' '+data.current_observation.wind_dir+' at '+data.current_observation.wind_mph+' MPH</th></tr>';
+      htmlstring += '<tr><th colspan=3>Right Now: '+data.current_observation.weather+'. Feels like '+data.current_observation.feelslike_string+', Wind: '+data.current_observation.wind_string+'</th></tr>';
     }
   });
   htmlstring += '</table>';
   $('#weather').html(htmlstring);
 
+  var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+  url += '?' + $.param({
+    'api-key': "17b0b5541c312e95c8374c7489af610f:10:73191170"
+  });
+  $.ajax({
+    url: url,
+    method: 'GET',
+  }).done(function(result) {
+    for (var i = 0; i < result.response.docs.length; i++) {
+      result.response.docs[i]
+    }
+  }).fail(function(err) {
+    throw err;
+  });
   var myDate = new Date();
 
   if (myDate.getHours() < 12) {
