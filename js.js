@@ -36,10 +36,14 @@ $(document).ready(function() {
   $.ajax({
     url: url,
     method: 'GET',
+    async:false,
   }).done(function(result) {
-    for (var i = 0; i < result.response.docs.length; i++) {
-      result.response.docs[i]
+    htmlstring = "<table>";
+    for (var i = 0; i < Math.min(result.response.docs.length,3); i++) {
+      htmlstring+="<tr><td>"+result.response.docs[i].headline.main+": "+result.response.docs[i].snippet+"</td></tr>";
     }
+    htmlstring+= "</table>";
+    $('#news').html(htmlstring);
   }).fail(function(err) {
     throw err;
   });
