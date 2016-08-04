@@ -5,7 +5,7 @@ $(document).ready(function() {
 
   htmlstring = "";
   $.ajax({
-    url: 'http://api.wunderground.com/api/cec98b78b65111a9/forecast/q/zmw:12993.1.99999.json',
+    url: 'http://api.wunderground.com/api/cec98b78b65111a9/forecast/q/44.1451,-73.4182.json',
     dataType: 'json',
     async: false,
     success: function(data) {
@@ -19,7 +19,7 @@ $(document).ready(function() {
     }
   });
   $.ajax({
-    url: 'http://api.wunderground.com/api/cec98b78b65111a9/conditions/q/zmw:12993.1.99999.json',
+    url: 'http://api.wunderground.com/api/cec98b78b65111a9/conditions/q/44.1451,-73.4182.json',
     dataType: 'json',
     async: false,
     success: function(data) {
