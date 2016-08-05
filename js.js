@@ -31,7 +31,9 @@ $(document).ready(function() {
 
   var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
   url += '?' + $.param({
-    'api-key': "17b0b5541c312e95c8374c7489af610f:10:73191170"
+    'api-key': "17b0b5541c312e95c8374c7489af610f:10:73191170",
+    'begin_date': "20160805",
+    'sort': "newest"
   });
   $.ajax({
     url: url,
