@@ -61,6 +61,7 @@ $(document).ready(function() {
       $('#title').append("Hello, ");
   }
   $('#title').append("Camp Dudley!");
+  $('#title').addClass('animated fadeIn');
 
   function updateClock() {
     var now = new Date(), // current date
@@ -74,6 +75,8 @@ $(document).ready(function() {
     // set the content of the element with the ID time to the formatted string
     document.getElementById('time').innerHTML = time;
     document.getElementById('date').innerHTML = date;
+    $('#time').addClass('animated fadeIn');
+    $('#date').addClass('animated fadeIn');
 
     if(now.getMinutes()%10 == 0 && now.getSeconds() == 0) {
       location.reload();
