@@ -31,6 +31,7 @@ body {
   top: 20px;
   font-size:30;
 }
+
 #weather{
   position: fixed;
   right: 20px;
@@ -46,11 +47,13 @@ body {
   top:70;
   font-size: 2.2vh;
 }
+
 #bottomright {
   position: fixed;
   right: 20px;
   bottom: 20px;
 }
+
 #news {
   position: fixed;
   right: 20px;
