@@ -73,13 +73,15 @@ $(document).ready(function() {
     document.getElementById('time').innerHTML = time;
     document.getElementById('date').innerHTML = date;
 
-    if(now.getMinutes()%10 == 0) {
+    if(now.getMinutes()%10 == 0 && now.getSeconds() == 0) {
       location.reload();
     }
     // call this function again in 1000ms
     setTimeout(updateClock, 1000);
   }
-  updateClock(); // initial call
+  setTimeout(function () {
+    updateClock();
+  },1000);
 
   document.getElementById('background').style.backgroundImage='url(http://jonathandamico.me/dudleydisplay/images/'+(new String(parseInt(Math.random()*8)+1))+'.jpg)';
 });
