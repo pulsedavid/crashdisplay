@@ -73,6 +73,9 @@ $(document).ready(function() {
     document.getElementById('time').innerHTML = time;
     document.getElementById('date').innerHTML = date;
 
+    if(now.getMinutes()%10 == 0) {
+      location.reload();
+    }
     // call this function again in 1000ms
     setTimeout(updateClock, 1000);
   }
