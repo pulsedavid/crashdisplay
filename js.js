@@ -28,11 +28,11 @@ $(document).ready(function() {
   });
   htmlstring += '</table>';
   $('#weather').html(htmlstring);
-
+  today = new Date();
   var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
   url += '?' + $.param({
     'api-key': "17b0b5541c312e95c8374c7489af610f:10:73191170",
-    'begin_date': "20160805",
+    'begin_date': ""+today.getUTCFullYear()+(today.getMonth()<10?"0"+today.getMonth():today.getMonth())+(today.getDate()<10?"0"+today.getDate():today.getDate()),
     'sort': "newest"
   });
   $.ajax({
