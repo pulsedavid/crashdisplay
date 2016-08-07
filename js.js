@@ -91,7 +91,8 @@ $(document).ready(function() {
     slidesToShow: 4,
     slidesToScroll: 4,
     prevArrow: "",
-    nextArrow: ""
+    nextArrow: "",
+    fade: true
   });
   var myDate = new Date();
 
