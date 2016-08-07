@@ -1,3 +1,6 @@
 [submodule "animate"]
 	path = animate
 	url = https://github.com/daneden/animate.css
+[submodule "slick"]
+	path = slick
+	url = https://github.com/kenwheeler/slick/
