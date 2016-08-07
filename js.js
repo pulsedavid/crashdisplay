@@ -40,6 +40,7 @@ $(document).ready(function() {
     method: 'GET',
     async:false,
   }).done(function(result) {
+    htmlstring = "";
     for (var i = 0; i < Math.min(result.response.docs.length); i++) {
       htmlstring+="<div>"+result.response.docs[i].headline.main+": "+result.response.docs[i].snippet+"</div>";
     }
