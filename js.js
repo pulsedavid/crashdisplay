@@ -40,14 +40,20 @@ $(document).ready(function() {
     method: 'GET',
     async:false,
   }).done(function(result) {
-    htmlstring = "<table style='color:white;font-size:2.2vh'>";
-    for (var i = 0; i < Math.min(result.response.docs.length,4); i++) {
-      htmlstring+="<tr><td>"+result.response.docs[i].headline.main+": "+result.response.docs[i].snippet+"</td></tr>";
+    for (var i = 0; i < Math.min(result.response.docs.length); i++) {
+      htmlstring+="<div>"+result.response.docs[i].headline.main+": "+result.response.docs[i].snippet+"</div>";
     }
     htmlstring+= "</table>";
     $('#news').html(htmlstring);
   }).fail(function(err) {
     throw err;
+  });
+  $('#news').slick({
+    vertical: true,
+    autoplay: true,
+    autoplaySpeed: 8000,
+    slidesToShow: 4,
+    slidesToScroll: 4
   });
   var myDate = new Date();
 
