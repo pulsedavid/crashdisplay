@@ -32,7 +32,14 @@ body {
   font-size:30;
 }
 
-#weatherSwitcher{
+#weather{
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  font-size:2em;
+}
+
+#weatherRadar{
   position: fixed;
   right: 20px;
   top: 20px;

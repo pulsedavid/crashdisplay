@@ -84,10 +84,12 @@ $(document).ready(function() {
       location.reload();
     } else if(now.getSeconds()%10==0) {
       if(radarActive) {
-        $('#weather').html(weatherHTML);
+        $('#weather').setClass('animated fadeIn');
+        $('#weatherRadar').setClass('animated fadeOut');
         radarActive = false;
       } else {
-        $('#weather').html("<img src=http://api.wunderground.com/api/e78d2ccf0a39822b/animatedradar/q/44.1451,-73.4182.gif?rainsnow=true&newmaps=1&noclutter=1&num=15&timelabel=1&timelabel.x=525&timelabel.y=41&width=640&height=480&delay=25>");
+        $('#weatherRadar').setClass('animated fadeIn');
+        $('#weather').setClass('animated fadeOut');
         radarActive = true;
       }
     }
