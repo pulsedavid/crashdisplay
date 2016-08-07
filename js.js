@@ -49,7 +49,13 @@ $(document).ready(function() {
       htmlstring+="<tr><td>"+result.response.docs[i].headline.main+": "+result.response.docs[i].snippet+"</td></tr>";
     }
     htmlstring+= "</table>";
-    $('#news').html(htmlstring);
+    news1 = htmlstring;
+    htmlstring = "<table style='color:white;font-size:2.2vh'>";
+    for (var i = Math.min(result.response.docs.length,4); i < Math.min(result.response.docs.length,8); i++) {
+      htmlstring+="<tr><td>"+result.response.docs[i].headline.main+": "+result.response.docs[i].snippet+"</td></tr>";
+    }
+    htmlstring+= "</table>";
+    news2 = htmlstring;
   }).fail(function(err) {
     throw err;
   });
@@ -94,10 +100,12 @@ $(document).ready(function() {
       if(radarActive) {
         $('#weather').attr('class', 'animated fadeIn');
         $('#weatherRadar').attr('class', 'animated fadeOut');
+        $('#news').html(news1);
         radarActive = false;
       } else {
         $('#weatherRadar').attr('class', 'animated fadeIn');
         $('#weather').attr('class', 'animated fadeOut');
+        $('#news').html(news2);
         radarActive = true;
       }
     }
