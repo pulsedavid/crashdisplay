@@ -100,6 +100,7 @@ $(document).ready(function() {
       if(radarActive) {
         $('#weatherRadar').attr('class', 'animated fadeOut');
         $('#weatherRadar').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+          $('#weatherRadar').hide();
           $('#weather').attr('class', 'animated fadeIn');
         });
         $('#news').attr('class', 'animated fadeOut');
@@ -107,12 +108,11 @@ $(document).ready(function() {
           $('#news').html(news1);
           $('#news').attr('class', 'animated fadeIn');
         });
-
-
         radarActive = false;
       } else {
         $('#weather').attr('class', 'animated fadeOut');
         $('#weather').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+          $('#weatherRadar').show();
           $('#weatherRadar').attr('class', 'animated fadeIn');
         });
         $('#news').attr('class', 'animated fadeOut');
