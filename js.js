@@ -4,7 +4,7 @@ $(document).ready(function() {
   var weatherHTML;
   var radarActive = false;
 
-  $('#weatherRadar').attr('src', 'http://api.wunderground.com/api/e78d2ccf0a39822b/animatedradar/q/44.1451,-73.4182.gif?rainsnow=true&newmaps=1&noclutter=1&num=15&timelabel=1&timelabel.x=525&timelabel.y=41&width='+$('#weatherRadar').parent().width()+'&height='+$('#weatherRadar').parent().height()+'&delay=25&smooth=1>')
+  $('#weatherRadar').attr('src', 'http://api.wunderground.com/api/e78d2ccf0a39822b/animatedradar/q/44.1451,-73.4182.gif?rainsnow=true&newmaps=1&noclutter=1&num=15&timelabel=1&timelabel.x=525&timelabel.y=41&width='+$('#weatherRadar').width()+'&height='+$('#weatherRadar').height()+'&delay=25&smooth=1>')
 
   htmlstring = "";
   $.ajax({
