@@ -52,8 +52,7 @@ $(document).ready(function() {
     autoplay: true,
     autoplaySpeed: 8000,
     slidesToShow: 4,
-    slidesToScroll: 4,
-    fade: true
+    slidesToScroll: 4
   });
   var myDate = new Date();
 
