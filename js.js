@@ -54,8 +54,9 @@ $(document).ready(function() {
     throw err;
   });
   var myDate = new Date();
-
-  if (myDate.getHours() < 12) {
+  if (myDate.getDay() == 0) {
+    $('#title').append("Happy Sunday, ");
+  } else if (myDate.getHours() < 12) {
       $('#title').append("Good Morning, ");
   } else if (myDate.getHours() >= 12 && myDate.getHours() <= 17) {
       $('#title').append("Good Afternoon, ");
