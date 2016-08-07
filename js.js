@@ -89,7 +89,9 @@ $(document).ready(function() {
     autoplay: true,
     autoplaySpeed: 8000,
     slidesToShow: 4,
-    slidesToScroll: 4
+    slidesToScroll: 4,
+    prevArrow: "",
+    nextArrow: ""
   });
   var myDate = new Date();
 
