@@ -84,12 +84,12 @@ $(document).ready(function() {
       location.reload();
     } else if(now.getSeconds()%10==0) {
       if(radarActive) {
-        $('#weather').setClass('animated fadeIn');
-        $('#weatherRadar').setClass('animated fadeOut');
+        $('#weather').attr('class', 'animated fadeIn');
+        $('#weatherRadar').attr('class', 'animated fadeOut');
         radarActive = false;
       } else {
-        $('#weatherRadar').setClass('animated fadeIn');
-        $('#weather').setClass('animated fadeOut');
+        $('#weatherRadar').attr('class', 'animated fadeIn');
+        $('#weather').attr('class', 'animated fadeOut');
         radarActive = true;
       }
     }
