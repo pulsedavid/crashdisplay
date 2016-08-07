@@ -28,70 +28,26 @@ $(document).ready(function() {
   });
   htmlstring += '</table>';
   $('#weather').html(htmlstring);
-
+  today = new Date();
   var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
   url += '?' + $.param({
     'api-key': "17b0b5541c312e95c8374c7489af610f:10:73191170",
-    'begin_date': "20160805",
+    'begin_date': ""+today.getUTCFullYear()+(today.getMonth()<10?"0"+today.getMonth():today.getMonth())+(today.getDate()<10?"0"+today.getDate():today.getDate()),
     'sort': "newest"
   });
-  htmlstring = "";
   $.ajax({
     url: url,
     method: 'GET',
     async:false,
   }).done(function(result) {
-    for (var i = 0; i < Math.min(result.response.docs.length); i++) {
-      htmlstring+="<div>"+result.response.docs[i].headline.main+": "+result.response.docs[i].snippet+"</div>";
+    htmlstring = "<table style='color:white;font-size:2.2vh'>";
+    for (var i = 0; i < Math.min(result.response.docs.length,4); i++) {
+      htmlstring+="<tr><td>"+result.response.docs[i].headline.main+": "+result.response.docs[i].snippet+"</td></tr>";
     }
+    htmlstring+= "</table>";
+    $('#news').html(htmlstring);
   }).fail(function(err) {
     throw err;
-  });
-  var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
-  url += '?' + $.param({
-    'api-key': "17b0b5541c312e95c8374c7489af610f:10:73191170",
-    'begin_date': ""+today.getUTCFullYear()+(today.getMonth()<10?"0"+today.getMonth():today.getMonth())+(today.getDate()<10?"0"+today.getDate():today.getDate()),
-    'sort': "newest",
-    'page': 1
-  });
-  $.ajax({
-    url: url,
-    method: 'GET',
-    async:false,
-  }).done(function(result) {
-    for (var i = 0; i < Math.min(result.response.docs.length); i++) {
-      htmlstring+="<div>"+result.response.docs[i].headline.main+": "+result.response.docs[i].snippet+"</div>";
-    }
-  }).fail(function(err) {
-    throw err;
-  });
-  var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
-  url += '?' + $.param({
-    'api-key': "17b0b5541c312e95c8374c7489af610f:10:73191170",
-    'begin_date': ""+today.getUTCFullYear()+(today.getMonth()<10?"0"+today.getMonth():today.getMonth())+(today.getDate()<10?"0"+today.getDate():today.getDate()),
-    'sort': "newest",
-    'page': 2
-  });
-  $.ajax({
-    url: url,
-    method: 'GET',
-    async:false,
-  }).done(function(result) {
-    for (var i = 0; i < Math.min(result.response.docs.length); i++) {
-      htmlstring+="<div>"+result.response.docs[i].headline.main+": "+result.response.docs[i].snippet+"</div>";
-    }
-  }).fail(function(err) {
-    throw err;
-  });
-  $('#news').html(htmlstring);
-  $('#news').slick({
-    vertical: true,
-    autoplay: true,
-    autoplaySpeed: 8000,
-    slidesToShow: 4,
-    slidesToScroll: 4,
-    prevArrow: "",
-    nextArrow: ""
   });
   var myDate = new Date();
 
