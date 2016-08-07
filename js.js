@@ -83,6 +83,11 @@ $(document).ready(function() {
     $('#time').addClass('animated fadeIn');
     $('#date').addClass('animated fadeIn');
 
+    if(time.indexOf("4:20")!=-1)
+      document.getElementById('time').style.color='green';
+    else
+      document.getElementById('time').style.color='white';
+
     if(now.getMinutes()%10 == 0 && now.getSeconds() == 0) {
       location.reload();
     } else if(now.getSeconds()%10==0) {
