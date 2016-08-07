@@ -83,10 +83,10 @@ $(document).ready(function() {
     if(now.getMinutes()%10 == 0 && now.getSeconds() == 0) {
       location.reload();
     } else if(now.getSeconds()%10==0) {
-      if(radarActive)
+      if(radarActive) {
         $('#weather').html(weatherHTML);
         radarActive = false;
-      else {
+      } else {
         $('#weather').html("<img src=http://api.wunderground.com/api/e78d2ccf0a39822b/animatedradar/q/44.1451,-73.4182.gif?rainsnow=true&newmaps=1&noclutter=1&num=15&timelabel=1&timelabel.x=525&timelabel.y=41&width=640&height=480&delay=25>");
         radarActive = true;
       }
