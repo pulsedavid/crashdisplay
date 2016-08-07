@@ -100,12 +100,18 @@ $(document).ready(function() {
       if(radarActive) {
         $('#weather').attr('class', 'animated fadeIn');
         $('#weatherRadar').attr('class', 'animated fadeOut');
+        $('#news').attr('class', 'animated fadeOut');
+        $('#news').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', doSomething);
         $('#news').html(news1);
+        $('#news').attr('class', 'animated fadeIn');
         radarActive = false;
       } else {
         $('#weatherRadar').attr('class', 'animated fadeIn');
         $('#weather').attr('class', 'animated fadeOut');
+        $('#news').attr('class', 'animated fadeOut');
+        $('#news').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', doSomething);
         $('#news').html(news2);
+        $('#news').attr('class', 'animated fadeIn');
         radarActive = true;
       }
     }
