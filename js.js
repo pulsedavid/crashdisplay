@@ -43,6 +43,7 @@ $(document).ready(function() {
     url: url,
     method: 'GET',
     async:false,
+    dataType: 'jsonp',
   }).done(function(result) {
     htmlstring = "<table style='color:white;font-size:2.2vh'>";
     for (var i = 0; i < Math.min(result.response.docs.length,4); i++) {
@@ -98,8 +99,10 @@ $(document).ready(function() {
       location.reload();
     } else if(now.getSeconds()%10==0) {
       if(radarActive) {
-        $('#weatherRadar').hide();
-        $('#weather').attr('class', 'animated fadeIn');
+        setTimeout(function(){
+          $('#weatherRadar').hide();
+          $('#weather').attr('class', 'animated fadeIn');
+        }, 1000);
         $('#news').attr('class', 'animated fadeOut');
         $('#news').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
           $('#news').html(news1);
