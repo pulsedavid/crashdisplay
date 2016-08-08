@@ -102,7 +102,6 @@ $(document).ready(function() {
         $('#weather').attr('class', 'animated fadeIn');
         $('#news2').attr('class', 'animated fadeOut');
         $('#news1').attr('class', 'animated fadeIn');
-        });
         radarActive = false;
       } else {
         $('#weather').attr('class', 'animated fadeOut');
