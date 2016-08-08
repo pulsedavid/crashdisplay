@@ -1,3 +1,7 @@
+$('#weatherRadar').onerror = function () {
+  console.log("as;dfhasdiufasdf");
+}
+
 $(document).ready(function() {
 
   var currentWeather;
