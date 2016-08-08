@@ -54,13 +54,13 @@ $(document).ready(function() {
       htmlstring+="<tr><td>"+result.response.docs[i].headline.main+": "+result.response.docs[i].snippet+"</td></tr>";
     }
     htmlstring+= "</table>";
-    news1 = htmlstring;
+    $('#news1').html(htmlstring);
     htmlstring = "<table style='color:white;font-size:2.2vh'>";
     for (var i = Math.min(result.response.docs.length,4); i < Math.min(result.response.docs.length,8); i++) {
       htmlstring+="<tr><td>"+result.response.docs[i].headline.main+": "+result.response.docs[i].snippet+"</td></tr>";
     }
     htmlstring+= "</table>";
-    news2 = htmlstring;
+    $('#news2').html(htmlstring);
   }).fail(function(err) {
     throw err;
   });
@@ -100,23 +100,15 @@ $(document).ready(function() {
       if(radarActive) {
         $('#weatherRadar').attr('class', 'animated fadeOut');
         $('#weather').attr('class', 'animated fadeIn');
-        // $('#weatherRadar').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-        //   $('#weatherRadar').hide();
-        // });
-        $('#news').attr('class', 'animated fadeOut');
-        $('#news').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-          $('#news').html(news1);
-          $('#news').attr('class', 'animated fadeIn');
+        $('#news2').attr('class', 'animated fadeOut');
+        $('#news1').attr('class', 'animated fadeIn');
         });
         radarActive = false;
       } else {
         $('#weather').attr('class', 'animated fadeOut');
         $('#weatherRadar').attr('class', 'animated fadeIn');
-        $('#news').attr('class', 'animated fadeOut');
-        $('#news').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-          $('#news').html(news2);
-          $('#news').attr('class', 'animated fadeIn');
-        });
+        $('#news1').attr('class', 'animated fadeOut');
+        $('#news2').attr('class', 'animated fadeIn');
         radarActive = true;
       }
     }
