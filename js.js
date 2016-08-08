@@ -113,6 +113,7 @@ $(document).ready(function() {
       } else {
         $('#weather').attr('class', 'animated fadeOut');
         $('#weather').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+          $('#weatherRadar').show();
           $('#weatherRadar').attr('class', 'animated fadeIn');
         });
         $('#news').attr('class', 'animated fadeOut');
