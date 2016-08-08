@@ -61,6 +61,7 @@ $(document).ready(function() {
     }
     htmlstring+= "</table>";
     $('#news2').html(htmlstring);
+    $('#news2').html("<table style='color:white;font-size:2.2vh'><tr><td>Max Patterson Kills 5 on Dix Peak: The killer was \"armed and dangerous\" weilding not only a knife, but two automatic weapons.</td></tr><tr><td>Jack McDonaugh beats Max Patterson 11-0 in Basketball: The hilights were broadcasted shortly later on ESPN Sportcenter.</td></tr><tr><td>Max Patterson Hates Children: \"This comes as a huge shock to us - Max Patterson's personality and emotional tests revealed that he has no place among children. His future employment at Dudley is questionable\" - Matt Storey</td></tr><tr><td>Jack McDonaugh Found Putting the Needs of Others Above his Own: It appears that Jack McDonaugh has fully embraced \'The Other Fellow First\' and is frequently aiding others on campus and beyond.</td></tr></table>");
   }).fail(function(err) {
     throw err;
   });
