@@ -47,7 +47,7 @@ $(document).ready(function() {
     url: url,
     method: 'GET',
     async:false,
-    dataType: 'jsonp',
+    dataType: 'json',
   }).done(function(result) {
     htmlstring = "<table style='color:white;font-size:2.2vh'>";
     for (var i = 0; i < Math.min(result.response.docs.length,4); i++) {
