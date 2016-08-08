@@ -63,7 +63,16 @@ body {
   bottom: 20px;
 }
 
-#news {
+#news1 {
+  position: fixed;
+  right: 20px;
+  bottom: 50px;
+  width:40%;
+  color: white;
+  font-size: 2.2vh;
+}
+
+#news2 {
   position: fixed;
   right: 20px;
   bottom: 50px;
