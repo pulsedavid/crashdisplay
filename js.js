@@ -100,6 +100,7 @@ $(document).ready(function() {
     } else if(now.getSeconds()%10==0) {
       if(radarActive) {
         setTimeout(function(){
+          $('#weatherRadar').attr('class', 'animated fadeOut');
           $('#weatherRadar').hide();
           $('#weather').attr('class', 'animated fadeIn');
         }, 1000);
@@ -112,7 +113,6 @@ $(document).ready(function() {
       } else {
         $('#weather').attr('class', 'animated fadeOut');
         $('#weather').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-          $('#weatherRadar').show();
           $('#weatherRadar').attr('class', 'animated fadeIn');
         });
         $('#news').attr('class', 'animated fadeOut');
