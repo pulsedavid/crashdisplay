@@ -60,8 +60,9 @@ $(document).ready(function() {
       htmlstring+="<tr><td>"+result.response.docs[i].headline.main+": "+result.response.docs[i].snippet+"</td></tr>";
     }
     htmlstring+= "</table>";
-    $('#news2').html(htmlstring);
-    //$('#news2').html("<table style='color:white;font-size:2.2vh'><tr><td>Max Patterson Kills 5 on Dix Peak: The killer was \"armed and dangerous\" weilding not only a knife, but two automatic weapons.</td></tr><tr><td>Jack McDonaugh beats Max Patterson 11-0 in Basketball: The hilights were broadcasted shortly later on ESPN Sportcenter.</td></tr><tr><td>Max Patterson Hates Children: \"This comes as a huge shock to us - Max Patterson's personality and emotional tests revealed that he has no place among children. His future employment at Dudley is questionable\" - Matt Storey</td></tr><tr><td>Jack McDonaugh Found Putting the Needs of Others Above his Own: It appears that Jack McDonaugh has fully embraced \'The Other Fellow First\' and is frequently aiding others on campus and beyond.</td></tr></table>");
+    //$('#news2').html(htmlstring);
+    //$('#news2').html("<table style='color:white;font-size:2.2vh'><tr><td>Max Patterson Doesn't Wait 30 Mins After Eating to Swim: Such feats are accomplished by only the most evil of people.</td></tr><tr><td>Jack McDonaugh is a : The hilights were broadcasted shortly later on ESPN Sportcenter.</td></tr><tr><td>Max Patterson Hates Children: \"This comes as a huge shock to us - Max Patterson's personality and emotional tests revealed that he has no place among children. His future employment at Dudley is questionable\" - Matt Storey</td></tr><tr><td>Jack McDonaugh Found Putting the Needs of Others Above his Own: It appears that Jack McDonaugh has fully embraced \'The Other Fellow First\' and is frequently aiding others on campus and beyond.</td></tr></table>");
+    $('#news2').html("<iframe src='https://docs.google.com/spreadsheets/d/1vCXNVWDwN3intzwU0ry0ZQchriqrs8r78kNwaFhs1p4/pubhtml?gid=2109098478&amp;single=true&amp;widget=true&amp;headers=false'></iframe>");
   }).fail(function(err) {
     throw err;
   });
