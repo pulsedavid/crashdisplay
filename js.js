@@ -98,7 +98,7 @@ $(document).ready(function() {
     $('#time').addClass('animated fadeIn');
     $('#date').addClass('animated fadeIn');
 
-    if(now.getMinutes()%10 == 0 && now.getSeconds() == 0) {
+    if(now.getMinutes()%10 == 5 && now.getSeconds() == 0) { //load on 5 mins instead of 10 mins so that does not reload during prayer
       location.reload();
     } else if(now.getSeconds()%10==0) {
       if(radarActive) {
