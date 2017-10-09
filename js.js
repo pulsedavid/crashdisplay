@@ -8,11 +8,11 @@ $(document).ready(function() {
   var weatherHTML;
   var radarActive = false;
 
-  $('#weatherRadar').attr('src', 'http://api.wunderground.com/api/e78d2ccf0a39822b/animatedradar/q/44.1451,-73.4182.gif?rainsnow=true&newmaps=1&noclutter=1&num=15&timelabel=1&timelabel.x=40&timelabel.y=40&width='+$('#weatherRadar').width()+'&height='+$('#weatherRadar').height()+'&delay=25&smooth=1>')
+  $('#weatherRadar').attr('src', 'httsp://api.wunderground.com/api/e78d2ccf0a39822b/animatedradar/q/44.1451,-73.4182.gif?rainsnow=true&newmaps=1&noclutter=1&num=15&timelabel=1&timelabel.x=40&timelabel.y=40&width='+$('#weatherRadar').width()+'&height='+$('#weatherRadar').height()+'&delay=25&smooth=1>')
 
   htmlstring = "";
   $.ajax({
-    url: 'http://api.wunderground.com/api/cec98b78b65111a9/forecast/q/44.1451,-73.4182.json',
+    url: 'https://api.wunderground.com/api/cec98b78b65111a9/forecast/q/44.1451,-73.4182.json',
     dataType: 'json',
     async: false,
     success: function(data) {
@@ -26,7 +26,7 @@ $(document).ready(function() {
     }
   });
   $.ajax({
-    url: 'http://api.wunderground.com/api/cec98b78b65111a9/conditions/q/44.1451,-73.4182.json',
+    url: 'https://api.wunderground.com/api/cec98b78b65111a9/conditions/q/44.1451,-73.4182.json',
     dataType: 'json',
     async: false,
     success: function(data) {
@@ -126,5 +126,5 @@ $(document).ready(function() {
     updateClock();
   },1000);
 
-  document.getElementById('background').style.backgroundImage='url(http://jonathandamico.me/dudleydisplay/images/'+(new String(parseInt(Math.random()*8)+1))+'.jpg)';
+  document.getElementById('background').style.backgroundImage='url(https://crashhotel.com/wp-content/uploads/2017/03/rooms'+(new String(parseInt(Math.random()*8)+1))+'.jpg)';
 });
