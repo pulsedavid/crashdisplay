@@ -19,7 +19,7 @@ $(document).ready(function() {
       htmlstring = '<table id=weathertable>';
       for (var i = 0; i < Math.min(data.forecast.txt_forecast.forecastday.length,4); i++) {
         htmlstring += '<tr><td>'+data.forecast.txt_forecast.forecastday[i].title+'</td>';
-        htmlstring += '<td>'+data.forecast.txt_forecast.forecastday[i].fcttext+'</td>';
+        htmlstring += '<td>'+data.forecast.txt_forecast.forecastday[i].fcttext_metric+'</td>';
         htmlstring += '<td>Precip: '+data.forecast.txt_forecast.forecastday[i].pop+'%</td></tr>';
       }
 
@@ -30,7 +30,7 @@ $(document).ready(function() {
     dataType: 'json',
     async: false,
     success: function(data) {
-      htmlstring += '<tr><th colspan=3>Right Now: '+data.current_observation.weather+'. Temp: '+data.current_observation.temperature_string+', Feels like '+data.current_observation.feelslike_string+', Wind: '+data.current_observation.wind_string+'</th></tr>';
+      htmlstring += '<tr><th colspan=3>Right Now: '+data.current_observation.weather+'. Temp: '+data.current_observation.temp_c+' C, Feels like '+data.current_observation.feelslike_c+' C, Wind: '+data.current_observation.wind_string+'</th></tr>';
     }
   });
   htmlstring += '</table>';
