@@ -125,6 +125,13 @@ $(document).ready(function() {
   setTimeout(function () {
     updateClock();
   },1000);
-
+  
+function getRandomImage(imgAr, path) {
+    path = path || 'http://crashhotel.com/wp-content/uploads/'; // default path here
+    var num = Math.floor( Math.random() * imgAr.length );
+    var img = imgAr[ num ];
+    var imgStr = '<img src="' + path + img + '" alt = "">';
+    document.write(imgStr); document.close();
+}
   document.getElementById('background').style.backgroundImage='url(https://crashhotel.com/wp-content/uploads/2017/03/rooms'+(new String(parseInt(Math.random()*8)+1))+'.jpg)';
 });
