@@ -25,6 +25,7 @@ $(document).ready(function() {
 
     }
   });
+  
   $.ajax({
     url: 'https://api.wunderground.com/api/cec98b78b65111a9/conditions/q/zmw:00000.62.71157.json',
     dataType: 'json',
@@ -84,7 +85,7 @@ $(document).ready(function() {
   } else /* the hour is not between 0 and 24, so something is wrong */ {
       $('#title').append("Hello, ");
   }
-  $('#title').append("Camp Dudley!");
+  $('#title').append("Crashers!");
   $('#title').addClass('animated fadeIn');
 
   function updateClock() {
